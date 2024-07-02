@@ -14,22 +14,32 @@ const PokemonDetail = async ({ params }: DetailPageType) => {
   );
   const pokemonInfo: Pokemon = response.data;
   return (
-    <div>
+    <div className="flex flex-col justify-center gap-4">
       <Image
         src={pokemonInfo.sprites.front_default}
         alt={pokemonInfo.korean_name}
         width={250}
         height={250}
       />
-      이름: {pokemonInfo.korean_name} <br />
-      신장: {(pokemonInfo.height * 0.1).toFixed(1)}m <br />
-      체중: {pokemonInfo.weight * 0.1}kg <br />
-      타입: {pokemonInfo.types.map((type) => type.type.korean_name + "/")}{" "}
-      <br />
-      특성:{" "}
-      {pokemonInfo.abilities.map(
-        (ability) => ability.ability.korean_name + "/"
-      )}
+      <span>이름: {pokemonInfo.korean_name}</span>
+      <span>신장: {(pokemonInfo.height * 0.1).toFixed(1)}m</span>
+      <span>체중: {pokemonInfo.weight * 0.1}kg</span>
+      <div className="flex flex-row gap-1">
+        타입:{" "}
+        {pokemonInfo.types.map((type) => (
+          <div key={type.type.name} className="bg-red-500 rounded-sm">
+            {type.type.korean_name}
+          </div>
+        ))}{" "}
+      </div>
+      <div className="flex flex-row gap-1">
+        특성:{" "}
+        {pokemonInfo.abilities.map((ability) => (
+          <div key={ability.ability.name} className="bg-violet-700 rounded-sm">
+            {ability.ability.korean_name}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

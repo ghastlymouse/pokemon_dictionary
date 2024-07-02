@@ -20,9 +20,11 @@ export const generateMetadata = async (
 
 const DetailPage = async ({ params }: DetailPageType) => {
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center gap-4">
       <PokemonDetail params={params} />
-      <Link href={"/"}>Go Back</Link>
+      <Link href={"/"} className="bg-white text-black rounded-md p-1">
+        Go Back
+      </Link>
     </div>
   );
 };
