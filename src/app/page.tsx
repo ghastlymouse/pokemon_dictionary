@@ -23,9 +23,9 @@ export default function Home() {
   if (isError) return <div>데이터를 가져오는 데에 실패했습니다.</div>;
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <h1 className="">포켓몬 목록</h1>
-      <ul className="grid grid-cols-4 gap-40">
+    <div className="flex flex-col justify-center items-center gap-4">
+      <h1 className="text-2xl">포켓몬 목록</h1>
+      <ul className="grid grid-cols-6 gap-1">
         {pokemons.map((pokemon) => (
           <li
             key={pokemon.id}
