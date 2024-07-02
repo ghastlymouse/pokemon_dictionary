@@ -18,6 +18,8 @@ const PokemonDetail = async ({ params }: Params) => {
       <Image
         src={pokemonInfo.sprites.front_default}
         alt={pokemonInfo.korean_name}
+        width={250}
+        height={250}
       />
       이름: {pokemonInfo.korean_name} <br />
       신장: {(pokemonInfo.height * 0.1).toFixed(1)}m <br />
