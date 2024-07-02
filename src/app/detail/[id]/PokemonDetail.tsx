@@ -2,13 +2,13 @@ import axios from "axios";
 import Image from "next/image";
 import React from "react";
 
-interface Params {
+interface DetailPageType {
   params: {
     id: number;
   };
 }
 
-const PokemonDetail = async ({ params }: Params) => {
+const PokemonDetail = async ({ params }: DetailPageType) => {
   const response = await axios.get(
     `http://localhost:3000/api/pokemons/${params.id}`
   );
