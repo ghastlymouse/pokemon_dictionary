@@ -1,18 +1,28 @@
 import Link from "next/link";
 import PokemonDetail from "./PokemonDetail";
-
+import { Metadata } from "next";
+import axios from "axios";
 interface DetailPageType {
   params: {
     id: number;
   };
 }
 
-const DetailPage = ({ params }: DetailPageType) => {
+export const generateMetadata = async (
+  { params }: DetailPageType,
+  pokemonInfo: Pokemon
+): Promise<Metadata> => {
+  return {
+    title: `${params.id}번 포켓몬 정보`,
+    description: "정보",
+  };
+};
+
+const DetailPage = async ({ params }: DetailPageType) => {
   return (
     <div>
-      {params.id}
       <PokemonDetail params={params} />
-      <Link href={"/"}>뒤로가기</Link>
+      <Link href={"/"}>Go Back</Link>
     </div>
   );
 };
