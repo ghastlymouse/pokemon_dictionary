@@ -24,7 +24,7 @@ const PokemonDetail = async ({ params }: DetailPageType) => {
       <span>이름: {pokemonInfo.korean_name}</span>
       <span>신장: {(pokemonInfo.height * 0.1).toFixed(1)}m</span>
       <span>체중: {pokemonInfo.weight * 0.1}kg</span>
-      <div className="flex flex-row gap-1">
+      <div className="flex flex-row gap-1 items-center">
         타입:{" "}
         {pokemonInfo.types.map((type) => (
           <div key={type.type.name} className="bg-red-500 rounded-sm p-1">
@@ -32,7 +32,7 @@ const PokemonDetail = async ({ params }: DetailPageType) => {
           </div>
         ))}{" "}
       </div>
-      <div className="flex flex-row gap-1">
+      <div className="flex flex-row gap-1 items-center">
         특성:{" "}
         {pokemonInfo.abilities.map((ability) => (
           <div
