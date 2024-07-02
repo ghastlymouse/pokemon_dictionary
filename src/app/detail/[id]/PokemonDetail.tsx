@@ -27,7 +27,7 @@ const PokemonDetail = async ({ params }: DetailPageType) => {
       <div className="flex flex-row gap-1">
         타입:{" "}
         {pokemonInfo.types.map((type) => (
-          <div key={type.type.name} className="bg-red-500 rounded-sm">
+          <div key={type.type.name} className="bg-red-500 rounded-sm p-1">
             {type.type.korean_name}
           </div>
         ))}{" "}
@@ -35,10 +35,16 @@ const PokemonDetail = async ({ params }: DetailPageType) => {
       <div className="flex flex-row gap-1">
         특성:{" "}
         {pokemonInfo.abilities.map((ability) => (
-          <div key={ability.ability.name} className="bg-violet-700 rounded-sm">
+          <div
+            key={ability.ability.name}
+            className="bg-violet-700 rounded-sm p-1"
+          >
             {ability.ability.korean_name}
           </div>
         ))}
+      </div>
+      <div>
+        기술: {pokemonInfo.moves.map((move) => move.move.korean_name + " | ")}
       </div>
     </div>
   );
