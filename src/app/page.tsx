@@ -1,22 +1,25 @@
 "use client";
-import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import axios, { AxiosError } from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [pokemons, setPokemons] = useState<Pokemon[] | null>(null);
-
-  useEffect(() => {
-    const fetchData = async (): Promise<void> => {
+  const {
+    data: pokemons,
+    isError,
+    isPending,
+  } = useQuery<Pokemon[], AxiosError, Pokemon[]>({
+    queryKey: ["pokemons"],
+    queryFn: async () => {
       const response = await axios.get("http://localhost:3000/api/pokemons");
-      console.log(response.data);
-      setPokemons(response.data);
-    };
-    fetchData();
-  }, []);
+      return response.data;
+    },
+  });
 
-  if (!pokemons) return <div>...로딩중</div>;
+  if (isPending) return <div>...로딩중</div>;
+
+  if (isError) return <div>데이터를 가져오는 데에 실패했습니다.</div>;
 
   return (
     <div>
