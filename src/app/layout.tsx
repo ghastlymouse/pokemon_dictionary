@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import QueryProvider from "./provider";
+import QueryProvider from "./_Providers";
 
 export const metadata: Metadata = {
   title: "포켓몬 도감",
@@ -14,7 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="flex flex-col justify-center items-center gap-4">
+        <header className="text-2xl">포켓몬 도감</header>
         <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
