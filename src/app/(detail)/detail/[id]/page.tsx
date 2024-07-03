@@ -1,20 +1,11 @@
 import Link from "next/link";
-import PokemonDetail from "../../../components/PokemonDetail";
-import { Metadata } from "next";
+import PokemonDetail from "./_components/PokemonDetail";
+
 interface DetailPageType {
   params: {
     id: number;
   };
 }
-
-export const generateMetadata = async ({
-  params,
-}: DetailPageType): Promise<Metadata> => {
-  return {
-    title: `${params.id}번 포켓몬 정보`,
-    description: "정보",
-  };
-};
 
 const DetailPage = async ({ params }: DetailPageType) => {
   return (
