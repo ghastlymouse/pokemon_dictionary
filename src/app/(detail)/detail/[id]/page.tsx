@@ -9,9 +9,9 @@ interface DetailPageType {
 
 const DetailPage = async ({ params }: DetailPageType) => {
   return (
-    <div className="flex flex-col justify-center items-center gap-4">
+    <div className="h-[700px] p-4 bg-slate-400 flex flex-col justify-center items-center gap-4 rounded-md">
       <PokemonDetail params={params} />
-      <Link href={"/"} className="bg-white text-black rounded-md p-1">
+      <Link href={"/"} className="bg-black text-white rounded-md p-1">
         Go Back
       </Link>
     </div>

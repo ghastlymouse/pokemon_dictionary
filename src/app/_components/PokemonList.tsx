@@ -15,12 +15,12 @@ const PokemonList = () => {
     queryKey: ["pokemons"],
     queryFn: async () => {
       const response = await axios.get("http://localhost:3000/api/pokemons");
-      console.log(response.data);
+      console.log(response);
       return response.data;
     },
   });
 
-  if (isPending) return <div>...로딩중</div>;
+  if (isPending) return <div>포켓몬 불러오는 중...</div>;
 
   if (isError) return <div>데이터를 가져오는 데에 실패했습니다.</div>;
   return (
@@ -29,7 +29,7 @@ const PokemonList = () => {
         {pokemons.map((pokemon) => (
           <li
             key={pokemon.id}
-            className="border-solid border-4 border-white rounded-md p-4"
+            className="bg-slate-400 border-solid border-4 border-black rounded-md p-4"
           >
             <Link href={`/detail/${pokemon.id}`}>
               <Image

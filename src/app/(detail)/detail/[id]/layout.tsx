@@ -22,12 +22,7 @@ export const generateMetadata = async ({
 };
 
 const layout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
-  return (
-    <div>
-      <header>포켓몬 상세 정보</header>
-      {children}
-    </div>
-  );
+  return <div>{children}</div>;
 };
 
 export default layout;

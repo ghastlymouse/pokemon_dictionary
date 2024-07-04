@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col justify-center items-center gap-4">
-        <header className="text-2xl">포켓몬 도감</header>
+        <header className="text-2xl mt-10">포켓몬 도감</header>
         <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
