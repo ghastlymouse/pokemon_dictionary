@@ -14,7 +14,6 @@ const PokemonList = () => {
     queryKey: ["pokemons"],
     queryFn: async () => {
       const response = await axios.get("http://localhost:3000/api/pokemons");
-      console.log(response);
       return response.data;
     },
   });
