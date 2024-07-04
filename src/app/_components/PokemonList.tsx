@@ -8,7 +8,7 @@ import React from "react";
 
 const PokemonList = () => {
   const {
-    data: pokemons,
+    data: pokemons = [],
     isError,
     isPending,
   } = useQuery<Pokemon[], AxiosError, Pokemon[]>({
