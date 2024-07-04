@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Metadata } from "next";
-import React from "react";
 
 interface DetailPageType {
   params: {
