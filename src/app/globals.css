@@ -2,20 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: "Jua";
+  font-weight: 400;
+  src: url(../../public/fonts/Jua-Regular.ttf) format("truetype");
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-
   width: 1280px;
   margin: 0 auto;
+  font-family: "Jua";
 }
